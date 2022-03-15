@@ -7,16 +7,21 @@ namespace ckd_11_main
 {
     class Program
     {
+        class ckd11Generator
+        {
+            
+        }
         
 
         static void Main(string[] args)
         {
             string serialPreffix,serialSuffix,serialResult;
-            int serialStart,serialQuantity,digitCheck;
+            int serialStart,serialQuantity,digitCheck,prefixAdded;
+            char addPrefix;
 
-            Console.WriteLine("Ingrese primer serial: ");
+            Console.Write("Ingrese primer serial: ");
             serialStart = int.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese cantidad de seriales a generar: ");
+            Console.Write("Ingrese cantidad de seriales a generar: ");
             serialQuantity = int.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese el prefijo");
             serialPreffix = Console.ReadLine();
@@ -25,16 +30,35 @@ namespace ckd_11_main
             Console.Write("Desea agregar el prefijo al calculo? (Y/N)");
             try
             {
-                Console.ReadKey('y'=true);
+                Console.ReadKey(addPrefix);
+                if (addPrefix='Y')
+                {
+                    prefixAdded=1;   
+                }
+                if (addPrefix='N');
+                {
+                    prefixAdded=2;
+                }
+                return prefixAdded;
             }
             catch
             {
-                throw(SystemException.InvalidInput);
+                switch (prefixAdded)
+                {
+                    case 1:
+                    break;
+                    case 2:
+                    break;
+                    default:
+                    throw(SystemException.InvalidInput);
+                    break;
+                }
+                
             }
             
 
 
-            ckd_11_main ckd_11_gen = new cdk_11_gen(serialPreffix,serialSuffix,serialResult,serialStart,serialQuantity,digitCheck);
+            ckd11Generator ckd_11_generator = new cdk11generator(serialPreffix,serialSuffix,serialResult,serialStart,serialQuantity,digitCheck);
 
 
         }
