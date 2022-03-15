@@ -3,7 +3,7 @@ using System.Threading;
 using System.IO;
 using System.Linq;
 
-namespace ckd_11_main
+namespace ckd_11_generator
 {
     class Program
     {
