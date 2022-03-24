@@ -3,62 +3,32 @@ using System.Threading;
 using System.IO;
 using System.Linq;
 
-namespace ckd_11_generator
+namespace CKD_11_Generator
 {
-    class Program
+    public class Program
     {
-        class ckd11Generator
+        public static ckd11Generator()
         {
-            
+            public ckd_11_Generator(string serialPreffix,string serialSuffix,string serialResult,string serialFormat,int serialStart,int serialQuantity,int digitCheck,int prefixAdded)
+            {
+                this.serialPreffix = new serialPreffix;
+                
+            }
+            return "Done!";
         }
         
 
-        static void Main(string[] args)
+        static void Main()
         {
-            string serialPreffix,serialSuffix,serialResult;
-            int serialStart,serialQuantity,digitCheck,prefixAdded;
-            char addPrefix;
-
-            Console.Write("Ingrese primer serial: ");
-            serialStart = int.Parse(Console.ReadLine());
-            Console.Write("Ingrese cantidad de seriales a generar: ");
-            serialQuantity = int.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese el prefijo");
-            serialPreffix = Console.ReadLine();
-            Console.WriteLine("Ingrese un sufijo");
-            serialSuffix = Console.ReadLine();
-            Console.Write("Desea agregar el prefijo al calculo? (Y/N)");
-            try
+            // Presets
             {
-                Console.ReadKey(addPrefix);
-                if (addPrefix='Y')
-                {
-                    prefixAdded=1;   
-                }
-                if (addPrefix='N');
-                {
-                    prefixAdded=2;
-                }
-                return prefixAdded;
+                string serialPreffix="22B",serialSuffix="D3N3",serialFormat;
+                var serialResult="";
+                int serialStart=1,serialQuantity=5000,digitCheck=0;
             }
-            catch
-            {
-                switch (prefixAdded)
-                {
-                    case 1:
-                    break;
-                    case 2:
-                    break;
-                    default:
-                    throw(SystemException.InvalidInput);
-                    break;
-                }
-                
-            }
-            
 
 
-            ckd11Generator ckd_11_generator = new cdk11generator(serialPreffix,serialSuffix,serialResult,serialStart,serialQuantity,digitCheck);
+            ckd11Generator ckd_11_generator = new cdk11generator(serialPreffix,serialSuffix,serialResult,serialFormat,serialStart,serialQuantity,digitCheck,prefixAdded);
 
 
         }
